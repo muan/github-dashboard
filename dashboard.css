@@ -26,10 +26,11 @@
 .filter-checkbox {
   position: absolute;
   margin-top: 7px;
-  margin-left: 15px;
+  margin-left: 10px;
   -webkit-appearance: none;
   width: 14px;
   height: 14px;
+  background: #fff;
   border: 1px solid #08c;
 }
 
@@ -48,10 +49,10 @@
 .filter-label {
   cursor: pointer;
   vertical-align: middle;
-  margin: 0 10px 20px 10px;
+  margin: 0 10px 20px 5px;
   display: inline-block;
   padding: 5px;
-  padding-left: 25px;
+  padding-left: 30px;
   border-radius: 3px;
 }
 
