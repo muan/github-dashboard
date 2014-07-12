@@ -26,17 +26,35 @@
 .filter-checkbox {
   position: absolute;
   margin-top: 7px;
-  margin-left: 10px;
+  margin-left: 15px;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #08c;
+}
+
+.filter-checkbox:checked:before {
+  font-family: octicons;
+  color: #08c;
+  display: block;
+  margin: -3px 0 0 1px;
+  content: "";
+}
+
+.filter-checkbox:focus, .filter-checkbox:active {
+  outline: none;
 }
 
 .filter-label {
+  cursor: pointer;
   vertical-align: middle;
-  margin: 0 10px 20px 30px;
+  margin: 0 10px 20px 10px;
   display: inline-block;
   padding: 5px;
+  padding-left: 25px;
   border-radius: 3px;
 }
 
 .filter-label:hover {
-  background: #ffe;
+  background: #f9f9f9;
 }
