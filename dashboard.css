@@ -1,45 +1,42 @@
-.button-group.dashboard-filters {
-  margin-bottom: 20px;
-  display: block;
-}
-
-.dashboard-filters.filter-empty:after {
-  content: "No events of this type.";
-  display: block;
-  text-align: center;
-  padding: 60px 0;
-  width: 100%;
-  border-radius: 3px;
-  position: relative;
-  top: 20px;
-  background: #f5f5f5;
-}
-
-.dashboard-filters.filter-empty {
-  padding-bottom: 20px;
-}
-
-.dashboard-filters ~ .alert {
+.news .alert {
   display: none;
 }
 
-.news.filtered-stars .watch_started {
+.filtered-stars:checked ~ .watch_started {
   display: block;
 }
 
-.news.filtered-forks .fork {
+.filtered-forks:checked ~ .fork {
   display: block;
 }
 
-.news.filtered-comments .issues_comment {
+.filtered-comments:checked ~ .issues_comment {
   display: block;
 }
 
-.news.filtered-repositories .create {
+.filtered-repositories:checked ~ .create {
   display: block;
 }
 
-.news.filtered-issues .issues_opened,
-.news.filtered-issues .issues_closed {
+.filtered-issues:checked ~ .issues_opened,
+.filtered-issues:checked ~ .issues_closed {
   display: block;
+}
+
+.filter-checkbox {
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 10px;
+}
+
+.filter-label {
+  vertical-align: middle;
+  margin: 0 10px 20px 30px;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.filter-label:hover {
+  background: #ffe;
 }
