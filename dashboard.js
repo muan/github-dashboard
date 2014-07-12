@@ -6,8 +6,32 @@ var events = ["Stars", "Forks", "Comments", "Repositories", "Issues"]
 
 function init() {
   events.map(function(key) {
-    $(".news").prepend("<input checked type=checkbox id=\""+ key + "\" class=\"filter-checkbox filtered-"+ key.toLowerCase() +"\"> <label class=\"filter-label\" for=\""+ key + "\">"+ key + "</label>")
+    $(".news").prepend("<input type=checkbox id=\""+ key + "\" class=\"filter-checkbox filtered-"+ key.toLowerCase() +"\"> <label class=\"filter-label\" for=\""+ key + "\">"+ key + "</label>")
   })
-
-  $("[data-key='comments']").click()
+  applyPreference()
 }
+
+function rememberPreference() {
+  var preference = {}
+  $('.filter-checkbox').each(function(_, box) {
+    preference[box.id] = $(box).is(":checked")
+  })
+  localStorage.setItem("dashboard:select", JSON.stringify(preference))
+}
+
+function applyPreference() {
+  var preference = localStorage.getItem("dashboard:select")
+  if(preference) {
+    preference = JSON.parse(preference)
+
+    $(".filter-checkbox").each(function(_, box) {
+      $(box).prop("checked", preference[box.id])
+    })
+  } else {
+    $(".filter-checkbox").prop("checked", true)
+  }
+}
+
+$(document).on("change", ".filter-checkbox", function() {
+  rememberPreference()
+})
