@@ -6,7 +6,6 @@ var events = ["Stars", "Forks", "Comments", "Repositories", "Issues"]
 
 function init() {
   $(".news").prepend("<div class=\"dashboard-filters button-group\"></div>")
-
   events.map(function(key) {
     $(".dashboard-filters").prepend("<a href=\"#\" class=\"button dashboard-filter\" data-key=\""+ key.toLowerCase() +"\">"+ key + "</a>")
   })
@@ -14,11 +13,21 @@ function init() {
   $("[data-key='comments']").click()
 }
 
+$(document).on("DOMNodeInserted", ".news", function() {
+  checkIfEvents()
+})
+
 $(document).on("click", ".dashboard-filter", function() {
   var key = "filtered-" + $(this).attr("data-key")
   var classes = events.map(function(key) { return "filtered-" + key.toLowerCase() }).join(" ")
   $(this).addClass("selected").siblings().removeClass("selected")
   $(".news").removeClass(classes).addClass(key)
+  checkIfEvents()
 
   return false
 })
+
+function checkIfEvents() {
+  var length = $(".news .alert:visible").length
+  $(".dashboard-filters").toggleClass("filter-empty", length == 0)
+}

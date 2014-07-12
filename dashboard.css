@@ -1,5 +1,22 @@
-.dashboard-filters {
+.button-group.dashboard-filters {
   margin-bottom: 20px;
+  display: block;
+}
+
+.dashboard-filters.filter-empty:after {
+  content: "No events of this type.";
+  display: block;
+  text-align: center;
+  padding: 60px 0;
+  width: 100%;
+  border-radius: 3px;
+  position: relative;
+  top: 20px;
+  background: #f5f5f5;
+}
+
+.dashboard-filters.filter-empty {
+  padding-bottom: 20px;
 }
 
 .dashboard-filters ~ .alert {
