@@ -1,0 +1,28 @@
+.dashboard-filters {
+  margin-bottom: 20px;
+}
+
+.dashboard-filters ~ .alert {
+  display: none;
+}
+
+.news.filtered-stars .watch_started {
+  display: block;
+}
+
+.news.filtered-forks .fork {
+  display: block;
+}
+
+.news.filtered-comments .issues_comment {
+  display: block;
+}
+
+.news.filtered-repositories .create {
+  display: block;
+}
+
+.news.filtered-issues .issues_opened,
+.news.filtered-issues .issues_closed {
+  display: block;
+}
