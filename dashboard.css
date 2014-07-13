@@ -1,4 +1,4 @@
-.news .alert {
+.filter-checkbox ~ .alert {
   display: none;
 }
 
