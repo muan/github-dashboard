@@ -15,6 +15,11 @@ I have always thought that I want an **activity filter** like this, but I don't 
 - [Download from the chrome web store](https://chrome.google.com/webstore/detail/pcnaddhmngnnpookfhhamkelhhakimdg).
 - [Manually load the extension](https://github.com/muan/github-gmail#the-mu-an-might-steal-all-my-data-so-i-want-to-manually-load-it-way).
 
+### Moar in the future
+
+- Enterprise support
+- Organization based preference
+
 ### Disclaimer
 
 Use at your own risk. :grimacing:
