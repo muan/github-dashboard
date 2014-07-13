@@ -8,7 +8,7 @@
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {
-      "matches": ["https://github.com/"],
+      "matches": ["https://github.com/", "https://github.com/orgs/*/dashboard"],
       "css": ["dashboard.css"],
       "js": ["jquery.min.js", "dashboard.js"]
     }
