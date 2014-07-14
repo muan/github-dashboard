@@ -2,7 +2,7 @@ $(document).ready(function() {
   init()
 })
 
-var events = ["Stars", "Forks", "Comments", "Repositories", "Issues"]
+var events = ["Stars", "Forks", "Comments", "Repositories", "Issues", "Org"]
 
 function init() {
   events.map(function(key) {

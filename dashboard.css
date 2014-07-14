@@ -10,6 +10,10 @@
   display: block;
 }
 
+.filtered-org:checked ~ .team_add {
+  display: block;
+}
+
 .filtered-comments:checked ~ .issues_comment {
   display: block;
 }
