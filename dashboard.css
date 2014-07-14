@@ -14,7 +14,8 @@
   display: block;
 }
 
-.filtered-repositories:checked ~ .create {
+.filtered-repositories:checked ~ .create,
+.filtered-repositories:checked ~ .push {
   display: block;
 }
 
