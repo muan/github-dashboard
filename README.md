@@ -22,7 +22,4 @@ I have always thought that I want an **activity filter** like this, but I don't 
 
 ### Disclaimer
 
-Use at your own risk. :grimacing:
-
-
-:zap:
+lol
