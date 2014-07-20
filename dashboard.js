@@ -2,6 +2,10 @@ $(document).ready(function() {
   init()
 })
 
+$(document).on("change", ".filter-checkbox", function() {
+  rememberPreference()
+})
+
 var events = ["Stars", "Forks", "Comments", "Repositories", "Issues", "Org"]
 
 function init() {
@@ -31,7 +35,3 @@ function applyPreference() {
     $(".filter-checkbox").prop("checked", true)
   }
 }
-
-$(document).on("change", ".filter-checkbox", function() {
-  rememberPreference()
-})
