@@ -14,7 +14,8 @@
   display: block;
 }
 
-.filtered-comments:checked ~ .issues_comment {
+.filtered-comments:checked ~ .issues_comment,
+.filtered-comments:checked ~ .commit_comment {
   display: block;
 }
 
