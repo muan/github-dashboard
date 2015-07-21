@@ -6,7 +6,7 @@ Dashboard
 GitHub activity feed is filled with tons of different activities. I care some of them, some time, but not all the time.
 I have always thought that I want an **activity filter** like this, but I don't know for sure if it's going to be helpful, so I thought I make this to test it out.
 
-![image](https://cloud.githubusercontent.com/assets/1153134/3567342/76dd0c88-0b17-11e4-9e04-77913e89a861.png)
+![image](https://cloud.githubusercontent.com/assets/1153134/8814218/957b8d36-303c-11e5-817a-3bf6443a8074.png)
 
 &nbsp;
 
