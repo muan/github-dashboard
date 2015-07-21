@@ -1,7 +1,7 @@
 {
   "name": "Dashboard",
   "short_name": "dashboard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "description": "Let me make you a good dashboard.",
   "homepage_url": "http://github.com/muan/dashboard",
