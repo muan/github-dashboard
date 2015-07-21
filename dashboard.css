@@ -36,15 +36,19 @@
   -webkit-appearance: none;
   width: 14px;
   height: 14px;
-  background: #fff;
-  border: 1px solid #08c;
+  background: #f5f5f5;
+}
+
+.filter-checkbox:checked {
+  background: transparent;
 }
 
 .filter-checkbox:checked:before {
   font-family: octicons;
   color: #08c;
   display: block;
-  margin: -3px 0 0 1px;
+  margin-top: -1px;
+  margin-left: 2px;
   content: "";
 }
 
@@ -52,16 +56,22 @@
   outline: none;
 }
 
+.filter-checkbox:checked + .filter-label {
+  border-color: #08c;
+}
+
 .filter-label {
   cursor: pointer;
   vertical-align: middle;
-  margin: 0 10px 20px 5px;
+  margin-right: 10px;
+  margin-bottom: 20px;
   display: inline-block;
-  padding: 5px;
+  border: 1px solid #eee;
+  padding: 5px 10px 5px 5px;
   padding-left: 30px;
   border-radius: 3px;
 }
 
 .filter-label:hover {
-  background: #f9f9f9;
+  box-shadow: 0 0 2px 0 #5cf;
 }
