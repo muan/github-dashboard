@@ -1,27 +1,40 @@
 var paginateProgress = 0
+init()
 
-$(document).ready(function () {
-  init()
+document.addEventListener('change', function (evt) {
+  if (evt.target.className.match(/filter-checkbox/)) {
+    rememberPreference()
+  }
 })
-
-$(document).on('change', '.filter-checkbox', function () {
-  rememberPreference()
-})
-
-var events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org']
 
 function init () {
-  events.map(function (key) {
-    $('.news .alert').first().before('<input type=checkbox id=\'' + key + '\' class=\'filter-checkbox filtered-' + key.toLowerCase() + '\'> <label class=\'filter-label\' for=\'' + key + '\'>' + key + '</label>')
+  var events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org']
+  var target = document.querySelector('.news .alert')
+  events.forEach(function (key) {
+    var input = document.createElement('input')
+    input.type = 'checkbox'
+    input.id = key.toLowerCase()
+    input.className = 'filter-checkbox filtered-' + key.toLowerCase()
+
+    var label = document.createElement('label')
+    label.className = 'filter-label'
+    label.setAttribute('for', key.toLowerCase())
+    label.innerText = key
+
+    target.parentElement.insertBefore(input, target)
+    target.parentElement.insertBefore(label, target)
   })
+
   applyPreference()
 }
 
 function rememberPreference () {
+  console.log('remembering')
   var preference = {}
-  $('.filter-checkbox').each(function (_, box) {
+  Array.prototype.forEach.call(document.getElementsByClassName('filter-checkbox'), function (box) {
     preference[box.id] = box.checked
   })
+
   localStorage.setItem('dashboard:select', JSON.stringify(preference))
   loadMoreItemsIfApplicable()
 }
@@ -32,7 +45,7 @@ function applyPreference () {
     preference = JSON.parse(preference)
   }
 
-  $('.filter-checkbox').each(function (_, box) {
+  Array.prototype.forEach.call(document.getElementsByClassName('filter-checkbox'), function (box) {
     box.checked = preference ? preference[box.id] : true
   })
 
@@ -40,23 +53,25 @@ function applyPreference () {
 }
 
 function loadMoreItemsIfApplicable (looping) {
-  var paginate = $('.ajax_paginate')
-  var paginateBtn = $('.js-events-pagination')
-  if (paginateBtn.length === 0) { return false }
+  var paginate = document.getElementsByClassName('ajax_paginate')[0]
+  var paginateBtn = document.getElementsByClassName('js-events-pagination')[0]
+  if (!paginateBtn) { return false }
   if (!looping) { paginateProgress = 0 }
+  paginateBtn.click()
 
   var visibleItems = Array.prototype.filter.call(document.getElementsByClassName('alert'), function (ele) {
     return ele.offsetHeight > 0
   })
 
   if (visibleItems.length < 10) {
-    $.ajax(paginateBtn.attr('href')).done(function (data) {
-      paginate.replaceWith(data)
+    paginateBtn.click()
 
+    // Ugh
+    setTimeout(function () {
       if (paginateProgress < 3 && visibleItems.length < 10) {
         paginateProgress++
         loadMoreItemsIfApplicable(true)
       }
-    })
+    }, 500)
   }
 }

@@ -10,7 +10,7 @@
     {
       "matches": ["https://github.com/", "https://github.com/orgs/*/dashboard"],
       "css": ["dashboard.css"],
-      "js": ["jquery.min.js", "dashboard.js"]
+      "js": ["dashboard.js"]
     }
   ]
 }
