@@ -3,8 +3,8 @@ Dashboard
 
 **This is a Chrome extension for filtering the activity feed on github.com dashboard.**
 
-GitHub activity feed is filled with tons of different activities. I care some of them, some time, but not all the time.
-I have always thought that I want an **activity filter** like this, but I don't know for sure if it's going to be helpful, so I thought I make this to test it out.
+GitHub activity feed is filled with tons of different activities. I care about some of them, sometimes, but not all the time.
+I always thought that it would be good to have an **activity filter** like this, but I didn't know for sure if it would be helpful. So I made this to find out.
 
 ![image](https://cloud.githubusercontent.com/assets/1153134/8814218/957b8d36-303c-11e5-817a-3bf6443a8074.png)
 
