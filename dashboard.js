@@ -8,7 +8,7 @@ document.addEventListener('change', function (evt) {
 })
 
 function init () {
-  var events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org']
+  var events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org', 'Wiki']
   var target = document.querySelector('.news .alert')
   events.forEach(function (key) {
     var input = document.createElement('input')
