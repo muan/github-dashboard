@@ -6,6 +6,10 @@
   display: block;
 }
 
+.filtered-wiki:checked ~ .gollum {
+  display: block;
+}
+
 .filtered-forks:checked ~ .fork {
   display: block;
 }
