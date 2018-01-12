@@ -13,7 +13,7 @@ I always thought that it would be good to have an **activity filter** like this,
 ### Install
 
 - [Download from the chrome web store](https://chrome.google.com/webstore/detail/pcnaddhmngnnpookfhhamkelhhakimdg).
-- [Manually load the extension](https://github.com/muan/github-gmail#the-mu-an-might-steal-all-my-data-so-i-want-to-manually-load-it-way).
+- [Manually load the extension](https://github.com/muan/github-gmail#the-mu-an-might-steal-all-my-data-so-i-want-to-manually-load-it-way-for-chrome).
 
 ### Moar in the future
 
