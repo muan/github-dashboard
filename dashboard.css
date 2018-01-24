@@ -1,62 +1,57 @@
-.filter-checkbox ~ .alert {
+#dashboard .watch_started,
+#dashboard .gollum,
+#dashboard .fork,
+#dashboard .team_add,
+#dashboard .issues_comment,
+#dashboard .commit_comment,
+#dashboard .create,
+#dashboard .public,
+#dashboard .push,
+#dashboard .follow,
+#dashboard .issues_opened,
+#dashboard .issues_labeled,
+#dashboard .issues_closed {
   display: none;
 }
 
-.filtered-stars:checked ~ .watch_started {
+#dashboard.show_stars .watch_started {
   display: block;
 }
 
-.filtered-wiki:checked ~ .gollum {
+#dashboard.show_wiki .gollum {
   display: block;
 }
 
-.filtered-forks:checked ~ .fork {
+#dashboard.show_follow .follow {
   display: block;
 }
 
-.filtered-org:checked ~ .team_add {
+#dashboard.show_forks .fork {
   display: block;
 }
 
-.filtered-comments:checked ~ .issues_comment,
-.filtered-comments:checked ~ .commit_comment {
+#dashboard.show_org .team_add {
   display: block;
 }
 
-.filtered-repositories:checked ~ .create,
-.filtered-repositories:checked ~ .push {
+#dashboard.show_comments .issues_comment,
+#dashboard.show_comments .commit_comment {
   display: block;
 }
 
-.filtered-issues:checked ~ .issues_opened,
-.filtered-issues:checked ~ .issues_closed {
+#dashboard.show_repositories .create,
+#dashboard.show_repositories .public,
+#dashboard.show_repositories .push {
   display: block;
 }
 
-.filter-checkbox {
-  position: absolute;
-  -webkit-appearance: none;
-}
-
-.filter-checkbox:focus, .filter-checkbox:active {
-  outline: none;
-}
-
-.filter-checkbox:checked + .filter-label {
-  border-color: #08c;
+#dashboard.show_issues .issues_opened,
+#dashboard.show_issues .issues_labeled,
+#dashboard.show_issues .issues_closed {
+  display: block;
 }
 
 .filter-label {
-  cursor: pointer;
-  vertical-align: middle;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  display: inline-block;
-  border: 1px solid #e0e0e0;
-  padding: 5px 10px;
-  border-radius: 3px;
-}
-
-.filter-label:hover {
-  box-shadow: 0 0 2px 0 #5cf;
+  display: block;
+  padding: 4px 10px 4px 30px;
 }

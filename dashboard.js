@@ -1,39 +1,65 @@
+const events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org', 'Wiki', 'Follow']
 var paginateProgress = 0
 init()
+updateClasses()
 
 document.addEventListener('change', function (evt) {
-  if (evt.target.className.match(/filter-checkbox/)) {
+  if (evt.target.classList.contains('js-dashboard-filter-checkbox')) {
+    updateClasses()
     rememberPreference()
   }
 })
 
+function updateClasses() {
+  const target = document.querySelector('#dashboard')
+  for (const checkbox of document.querySelectorAll('.js-dashboard-filter-checkbox')) {
+    target.classList.toggle(`show_${checkbox.id}`, checkbox.checked)
+  }
+}
+
 function init () {
-  var events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org', 'Wiki']
-  var target = document.querySelector('.news .alert')
-  events.forEach(function (key) {
+  const details = document.createElement('details')
+  details.classList.add('position-relative', 'details-reset', 'mb-3', 'js-dropdown-details', 'dropdown-details')
+  const summary = document.createElement('summary')
+  summary.classList.add('btn')
+  summary.innerText = 'Filter'
+  const container = document.createElement('div')
+  container.classList.add('dropdown-menu', 'dropdown-menu-se')
+
+  for (const key of events) {
     var input = document.createElement('input')
     input.type = 'checkbox'
     input.id = key.toLowerCase()
-    input.className = 'filter-checkbox filtered-' + key.toLowerCase()
+    input.className = 'position-absolute m-2 js-dashboard-filter-checkbox'
 
     var label = document.createElement('label')
     label.className = 'filter-label'
     label.setAttribute('for', key.toLowerCase())
     label.innerText = key
+    label.for = key.toLowerCase()
 
-    target.parentElement.insertBefore(input, target)
-    target.parentElement.insertBefore(label, target)
-  })
-
+    container.appendChild(input)
+    container.appendChild(label)
+  }
+  details.appendChild(summary)
+  details.appendChild(container)
+  // Personal || Org
+  var target = document.querySelector('#dashboard .tabnav')
+  console.log(target);
+  if (target) {
+    target.insertAdjacentElement('afterend', details)
+  } else {
+    document.querySelector('.news').prepend(details)
+  }
   applyPreference()
 }
 
 function rememberPreference () {
   console.log('remembering')
   var preference = {}
-  Array.prototype.forEach.call(document.getElementsByClassName('filter-checkbox'), function (box) {
+  for (const box of document.querySelectorAll('.js-dashboard-filter-checkbox')) {
     preference[box.id] = box.checked
-  })
+  }
 
   localStorage.setItem('dashboard:select', JSON.stringify(preference))
   loadMoreItemsIfApplicable()
@@ -45,21 +71,21 @@ function applyPreference () {
     preference = JSON.parse(preference)
   }
 
-  Array.prototype.forEach.call(document.getElementsByClassName('filter-checkbox'), function (box) {
+  for (const box of document.querySelectorAll('.js-dashboard-filter-checkbox')) {
     box.checked = preference ? preference[box.id] : true
-  })
+  }
 
   loadMoreItemsIfApplicable()
 }
 
 function loadMoreItemsIfApplicable (looping) {
-  var paginate = document.getElementsByClassName('ajax_paginate')[0]
-  var paginateBtn = document.getElementsByClassName('js-events-pagination')[0]
+  var paginateBtn = document.querySelector('.js-ajax-pagination button')
   if (!paginateBtn) { return false }
   if (!looping) { paginateProgress = 0 }
   paginateBtn.click()
 
-  var visibleItems = Array.prototype.filter.call(document.getElementsByClassName('alert'), function (ele) {
+  var classes = events.map(function(event){ return event.toLowerCase()}).join(',')
+  var visibleItems = Array.prototype.filter.call(document.querySelectorAll(classes), function (ele) {
     return ele.offsetHeight > 0
   })
 
