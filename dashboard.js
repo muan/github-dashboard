@@ -45,7 +45,6 @@ function init () {
   details.appendChild(container)
   // Personal || Org
   var target = document.querySelector('#dashboard .tabnav')
-  console.log(target);
   if (target) {
     target.insertAdjacentElement('afterend', details)
   } else {
@@ -55,7 +54,6 @@ function init () {
 }
 
 function rememberPreference () {
-  console.log('remembering')
   var preference = {}
   for (const box of document.querySelectorAll('.js-dashboard-filter-checkbox')) {
     preference[box.id] = box.checked
