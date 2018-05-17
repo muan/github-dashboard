@@ -19,7 +19,7 @@ function updateClasses() {
 
 function init () {
   const details = document.createElement('details')
-  details.classList.add('position-relative', 'details-reset', 'mb-3', 'js-dropdown-details', 'dropdown-details')
+  details.classList.add('position-relative', 'details-reset', 'mt-3', 'js-dropdown-details', 'dropdown-details')
   const summary = document.createElement('summary')
   summary.classList.add('btn')
   summary.innerText = 'Filter'
