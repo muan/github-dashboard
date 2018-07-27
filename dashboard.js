@@ -1,4 +1,4 @@
-const events = ['Stars', 'Forks', 'Comments', 'Repositories', 'Issues', 'Org', 'Wiki', 'Follow']
+const events = ['Open Source', 'Conversation --', 'Issues', 'Comments', 'Code --', 'Pushes', 'Releases', 'Forks', 'Wiki', 'Community --', 'Organization admin', 'Stars', 'Follow']
 var paginateProgress = 0
 init()
 updateClasses()
@@ -19,32 +19,43 @@ function updateClasses() {
 
 function init () {
   const details = document.createElement('details')
-  details.classList.add('position-relative', 'details-reset', 'mt-3', 'js-dropdown-details', 'dropdown-details')
+  details.classList.add('position-relative', 'mt-3', 'js-dropdown-details', 'details-overlay')
   const summary = document.createElement('summary')
   summary.classList.add('btn')
-  summary.innerText = 'Filter'
+  summary.innerText = 'Activity filter'
   const container = document.createElement('div')
   container.classList.add('dropdown-menu', 'dropdown-menu-se')
+  container.style.width = '200px'
 
   for (const key of events) {
+    var isHeader = key.split(/ --$/)
+    if (isHeader.length > 1) {
+      var header = document.createElement('div')
+      header.textContent = isHeader[0]
+      header.classList.add('dropdown-header')
+      container.appendChild(header)
+      continue
+    }
+    var id = key.toLowerCase().replace(/\s/g, '_')
     var input = document.createElement('input')
     input.type = 'checkbox'
-    input.id = key.toLowerCase()
-    input.className = 'position-absolute m-2 js-dashboard-filter-checkbox'
+    input.id = id
+    input.className = 'position-absolute my-2 ml-3 js-dashboard-filter-checkbox'
 
     var label = document.createElement('label')
     label.className = 'filter-label'
-    label.setAttribute('for', key.toLowerCase())
     label.innerText = key
-    label.for = key.toLowerCase()
+    label.htmlFor = id
 
     container.appendChild(input)
     container.appendChild(label)
   }
   details.appendChild(summary)
   details.appendChild(container)
+
   // Personal || Org
   var target = document.querySelector('#dashboard .tabnav')
+
   if (target) {
     target.insertAdjacentElement('afterend', details)
   } else {
@@ -77,7 +88,7 @@ function applyPreference () {
 }
 
 function loadMoreItemsIfApplicable (looping) {
-  var paginateBtn = document.querySelector('.js-ajax-pagination button')
+  var paginateBtn = document.querySelector('#dashboard button.ajax-pagination-btn')
   if (!paginateBtn) { return false }
   if (!looping) { paginateProgress = 0 }
   paginateBtn.click()
