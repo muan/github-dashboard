@@ -1,4 +1,4 @@
-const events = ['Open Source', 'Conversation --', 'Issues', 'Comments', 'Code --', 'Pushes', 'Releases', 'Forks', 'Wiki', 'Community --', 'Organization admin', 'Stars', 'Follow']
+const events = ['Open Source', 'Conversation --', 'Issues', 'Comments', 'Code --', 'Pushes', 'Releases', 'Forks', 'Wiki', 'Community --', 'Stars', 'Follow', 'Organization admin']
 var paginateProgress = 0
 init()
 updateClasses()
@@ -43,7 +43,7 @@ function init () {
     input.className = 'position-absolute my-2 ml-3 js-dashboard-filter-checkbox'
 
     var label = document.createElement('label')
-    label.className = 'filter-label'
+    label.className = 'pl-6 dropdown-item'
     label.innerText = key
     label.htmlFor = id
 
