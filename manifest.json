@@ -1,9 +1,9 @@
 {
-  "name": "Dashboard",
+  "name": "Dashboard filter for GitHub",
   "short_name": "dashboard",
   "version": "0.0.8",
   "manifest_version": 2,
-  "description": "Let me make you a good dashboard.",
+  "description": "This adds an activity filter menu to GitHub dashboard.",
   "homepage_url": "http://github.com/muan/dashboard",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
