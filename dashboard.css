@@ -1,6 +1,6 @@
 #dashboard .news .commit_comment,
 #dashboard .news .create,
-#dashboard .news .follow,
+#dashboard .news .follow .body,
 #dashboard .news .fork,
 #dashboard .news .git-branch,
 #dashboard .news .gollum,
@@ -27,7 +27,7 @@
   display: block;
 }
 
-#dashboard.show_follow .news .follow {
+#dashboard.show_follow .news .follow .body{
   display: block;
 }
 
