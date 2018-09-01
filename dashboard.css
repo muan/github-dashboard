@@ -66,3 +66,10 @@
 #dashboard.show_issues .news > .issues_reopened {
   display: block;
 }
+
+.js-recent-activity-container + details {
+  float: left;
+  margin-bottom: -6px;
+  margin-right: 10px;
+  margin-top: -3px;
+}
