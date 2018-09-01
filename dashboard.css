@@ -1,68 +1,68 @@
-#dashboard .news .commit_comment,
-#dashboard .news .create,
-#dashboard .news .follow,
-#dashboard .news .fork,
-#dashboard .news .git-branch,
-#dashboard .news .gollum,
-#dashboard .news .issues_closed,
-#dashboard .news .issues_comment,
-#dashboard .news .issues_labeled,
-#dashboard .news .issues_opened,
-#dashboard .news .issues_reopened,
-#dashboard .news .public,
-#dashboard .news .push,
-#dashboard .news .release,
-#dashboard .news .repo,
-#dashboard .news .tag,
-#dashboard .news .team_add,
-#dashboard .news .watch_started {
+#dashboard .news > .commit_comment,
+#dashboard .news > .create,
+#dashboard .news > .follow,
+#dashboard .news > .fork,
+#dashboard .news > .git-branch,
+#dashboard .news > .gollum,
+#dashboard .news > .issues_closed,
+#dashboard .news > .issues_comment,
+#dashboard .news > .issues_labeled,
+#dashboard .news > .issues_opened,
+#dashboard .news > .issues_reopened,
+#dashboard .news > .public,
+#dashboard .news > .push,
+#dashboard .news > .release,
+#dashboard .news > .repo,
+#dashboard .news > .tag,
+#dashboard .news > .team_add,
+#dashboard .news > .watch_started {
   display: none;
 }
 
-#dashboard.show_stars .news .watch_started {
+#dashboard.show_stars .news > .watch_started {
   display: block;
 }
 
-#dashboard.show_wiki .news .gollum {
+#dashboard.show_wiki .news > .gollum {
   display: block;
 }
 
-#dashboard.show_follow .news .follow {
+#dashboard.show_follow .news > .follow {
   display: block;
 }
 
-#dashboard.show_forks .news .fork {
+#dashboard.show_forks .news > .fork {
   display: block;
 }
 
-#dashboard.show_org_admin .news .team_add {
+#dashboard.show_org_admin .news > .team_add {
   display: block;
 }
 
-#dashboard.show_comments .news .issues_comment,
-#dashboard.show_comments .news .commit_comment {
+#dashboard.show_comments .news > .issues_comment,
+#dashboard.show_comments .news > .commit_comment {
   display: block;
 }
 
-#dashboard.show_open_source .news .repo,
-#dashboard.show_open_source .news .public {
+#dashboard.show_open_source .news > .repo,
+#dashboard.show_open_source .news > .public {
   display: block;
 }
 
-#dashboard.show_releases .news .tag,
-#dashboard.show_releases .news .release {
+#dashboard.show_releases .news > .tag,
+#dashboard.show_releases .news > .release {
   display: block;
 }
 
-#dashboard.show_pushes .news .create,
-#dashboard.show_pushes .news .git-branch,
-#dashboard.show_pushes .news .push {
+#dashboard.show_pushes .news > .create,
+#dashboard.show_pushes .news > .git-branch,
+#dashboard.show_pushes .news > .push {
   display: block;
 }
 
-#dashboard.show_issues .news .issues_opened,
-#dashboard.show_issues .news .issues_labeled,
-#dashboard.show_issues .news .issues_closed,
-#dashboard.show_issues .news .issues_reopened {
+#dashboard.show_issues .news > .issues_opened,
+#dashboard.show_issues .news > .issues_labeled,
+#dashboard.show_issues .news > .issues_closed,
+#dashboard.show_issues .news > .issues_reopened {
   display: block;
 }
