@@ -10,6 +10,15 @@ document.addEventListener('change', function (evt) {
   }
 })
 
+document.addEventListener('click', function (evt) {
+  if (evt.shiftKey && evt.target.classList.contains('js-dashboard-filter-label')) {
+    for (const checkbox of document.querySelectorAll('.js-dashboard-filter-checkbox')) {
+      if (checkbox === evt.target) continue
+      checkbox.checked = false
+    }
+  }
+})
+
 function updateClasses() {
   const target = document.querySelector('#dashboard')
   for (const checkbox of document.querySelectorAll('.js-dashboard-filter-checkbox')) {
@@ -20,6 +29,7 @@ function updateClasses() {
 function init () {
   const details = document.createElement('details')
   details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay')
+  details.style.userSelect = 'none'
   const summary = document.createElement('summary')
   summary.classList.add('btn')
   summary.innerText = 'Filter'
@@ -43,7 +53,7 @@ function init () {
     input.className = 'position-absolute my-2 ml-3 js-dashboard-filter-checkbox'
 
     var label = document.createElement('label')
-    label.className = 'pl-6 dropdown-item'
+    label.className = 'pl-6 dropdown-item js-dashboard-filter-label'
     label.innerText = key
     label.htmlFor = id
 
