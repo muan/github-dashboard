@@ -19,12 +19,12 @@ function updateClasses() {
 
 function init () {
   const details = document.createElement('details')
-  details.classList.add('position-relative', 'mt-3', 'js-dropdown-details', 'details-overlay')
+  details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay')
   const summary = document.createElement('summary')
   summary.classList.add('btn')
-  summary.innerText = 'Activity filter'
+  summary.innerText = 'Filter'
   const container = document.createElement('div')
-  container.classList.add('dropdown-menu', 'dropdown-menu-se')
+  container.classList.add('dropdown-menu', 'dropdown-menu-se', 'f5')
   container.style.width = '200px'
 
   for (const key of events) {
@@ -53,12 +53,19 @@ function init () {
   details.appendChild(summary)
   details.appendChild(container)
 
-  // Personal || Org
-  var target = document.querySelector('#dashboard .tabnav')
-
-  if (target) {
-    target.insertAdjacentElement('afterend', details)
+  var newUserDashboard = document.querySelector('.page-responsive [data-src="/dashboard/recent-activity"]')
+  var orgDashboard = document.querySelector('.page-responsive [data-src*="/dashboard/recent-activity?organization_id"]')
+  if (newUserDashboard) {
+    details.classList.add('float-right', 'mb-n1')
+    summary.classList.add('btn-sm')
+    container.classList.remove('dropdown-menu-se')
+    container.classList.add('dropdown-menu-sw')
+    newUserDashboard.after(details)
+  } else if (orgDashboard) {
+    orgDashboard.after(details)
   } else {
+    // org or user condition
+    details.classList.add(document.querySelector('#org_your_repos') ? 'mt-3' : 'mt-5')
     document.querySelector('.news').prepend(details)
   }
   applyPreference()
