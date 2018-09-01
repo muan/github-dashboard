@@ -1,7 +1,7 @@
 {
   "name": "Dashboard filter for GitHub",
   "short_name": "dashboard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "manifest_version": 2,
   "description": "This adds an activity filter menu to GitHub dashboard.",
   "homepage_url": "http://github.com/muan/dashboard",
