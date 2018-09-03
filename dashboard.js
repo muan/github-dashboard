@@ -109,7 +109,7 @@ function init () {
   } else {
     // org or user condition
     summary.classList.remove('btn-sm')
-    details.classList.add(isOrg ? 'mt-3' : 'mt-5')
+    details.classList.add(context === 'org' ? 'mt-3' : 'mt-5')
     document.querySelector('.news').prepend(details)
   }
   applyPreference()
