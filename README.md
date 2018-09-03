@@ -2,9 +2,7 @@
 
 A Chrome extension for filtering the activity feed on github.com dashboard.
 
-|User dashboard|Organization dashboard|
-|--|--|
-|![user context menu](https://user-images.githubusercontent.com/1153134/45001478-583d3c80-af9b-11e8-93bd-c0b1942d413c.png)|![org context menu](https://user-images.githubusercontent.com/1153134/45001513-9aff1480-af9b-11e8-9585-21873f8b0cf3.png)|
+![screenshot](https://user-images.githubusercontent.com/1153134/45003071-37311780-afac-11e8-8a2a-f64ba93f6593.png)
 
 ### Install
 
