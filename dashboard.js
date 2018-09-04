@@ -39,6 +39,8 @@ const events = [
   'team_add', 'member_add'
 ]
 
+let listOfFollowees
+
 init()
 updateClasses()
 if (context === 'user') specifyTimelineEvents()
@@ -139,38 +141,42 @@ function specifyTimelineEvents() {
   observer.observe(dashboard, {subtree: true, childList: true})
 }
 
-async function getFollowingList() {
+async function getFolloweeList() {
+  if (listOfFollowees) return listOfFollowees
+
   console.log('Dashboard extension: getting list of people you follow from localStorage')
-  const following = localStorage.getItem('dashboard:following')
-  if (!following || (following && (new Date().getTime() - new Date(JSON.parse(following).updatedAt))/1000 > 24*60*60)) {
-    const results = await fetchFollowing()
-    const following = {
+  const followees = localStorage.getItem('dashboard:following')
+  if (!followees || (followees && (new Date().getTime() - new Date(JSON.parse(followees).updatedAt))/1000 > 24*60*60)) {
+    const results = await fetchFollowees()
+    const followees = {
       updatedAt: (new Date()).getTime(),
       following: results
     }
-    localStorage.setItem('dashboard:following', JSON.stringify(following))
-    return results
+    localStorage.setItem('dashboard:following', JSON.stringify(followees))
+    listOfFollowees = results
   } else {
-    return JSON.parse(following).following
+    listOfFollowees = JSON.parse(followees).following
   }
+
+  return listOfFollowees
 }
 
-async function fetchFollowing() {
+async function fetchFollowees() {
   console.log('Dashboard extension: updating list of people you follow from GitHub API (once every 24h)')
   return new Promise(async function(resolve) {
-    let following = []
+    let followees = []
     const user = document.querySelector('.HeaderNavlink.name img').alt.slice(1)
     const endpoint = `https://api.github.com/users/${user}/following`
     let page = 1
     while (page > 0) {
       const res = await fetch(`${endpoint}?page=${page}`)
       const people = await res.json()
-      following = following.concat(people)
+      followees = followees.concat(people)
       if (people.length === 30) {
         page++
       } else {
         page = 0
-        resolve(following.map(o => o.login))
+        resolve(followees.map(o => o.login))
       }
     }
   })
@@ -178,7 +184,7 @@ async function fetchFollowing() {
 
 // Could break if GitHub changes its markup
 async function addMoreSpecificIdentifiers(list) {
-  const following = await getFollowingList()
+  const followees = await getFolloweeList()
   for (const record of list) {
     if (!record.target.classList.contains('news')) continue
     for (const eventItem of record.addedNodes) {
@@ -188,7 +194,7 @@ async function addMoreSpecificIdentifiers(list) {
 
       // Check if any links are to one of the followed people
       const fromFollowedPeople = Array.from(eventItem.querySelectorAll('a')).some(function(maybeActor) {
-        return following.indexOf(maybeActor.pathname.slice(1)) >= 0
+        return followees.indexOf(maybeActor.pathname.slice(1)) >= 0
       })
       eventItem.classList.add(fromFollowedPeople ? 'by_followed_people' : 'by_internet')
     }
