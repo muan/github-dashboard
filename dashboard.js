@@ -185,10 +185,11 @@ async function addMoreSpecificIdentifiers(list) {
       if (!(eventItem instanceof HTMLElement)) continue
       // eventItem should have only one className
       if (events.indexOf(eventItem.className) < 0) continue
-      // First link is actor. I know this is not great.
-      const actor = eventItem.querySelector('a')
-      if (!actor) continue
-      const fromFollowedPeople= following.indexOf(actor.pathname.slice(1)) >= 0
+
+      // Check if any links are to one of the followed people
+      const fromFollowedPeople = Array.from(eventItem.querySelectorAll('a')).some(function(maybeActor) {
+        return following.indexOf(maybeActor.pathname.slice(1)) >= 0
+      })
       eventItem.classList.add(fromFollowedPeople ? 'by_followed_people' : 'by_internet')
     }
   }
