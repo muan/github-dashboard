@@ -105,7 +105,7 @@ function init () {
   details.appendChild(summary)
   details.appendChild(container)
 
-  const newDashboard = document.querySelector('.page-responsive [data-src*="/dashboard/recent-activity"]')
+  const newDashboard = document.querySelector('.page-responsive [data-src*="/dashboard/recent-activity"], .js-recent-activity-container')
   if (newDashboard) {
     newDashboard.after(details)
   } else {
