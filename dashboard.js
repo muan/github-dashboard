@@ -106,15 +106,18 @@ function init () {
   details.appendChild(container)
 
   const newDashboard = document.querySelector('.page-responsive [data-src*="/dashboard/recent-activity"], .js-recent-activity-container')
+  const oldDashboard = document.querySelector('.news')
   if (newDashboard) {
     newDashboard.after(details)
-  } else {
+  } else if(oldDashboard) {
     // org or user condition
     summary.classList.remove('btn-sm')
     details.classList.add(context === 'org' ? 'mt-3' : 'mt-5')
-    document.querySelector('.news').prepend(details)
+
+    oldDashboard.prepend(details)
   }
-  applyPreference()
+
+  if (newDashboard || oldDashboard) applyPreference()
 }
 
 function rememberPreference () {
