@@ -190,7 +190,15 @@ async function addMoreSpecificIdentifiers(list) {
   const followees = await getFolloweeList()
   for (const record of list) {
     if (!record.target.classList.contains('news')) continue
-    for (const eventItem of record.addedNodes) {
+
+    let eventItems = record.addedNodes
+    // Markup change workaround for events wrapped in an empty div
+    const firstNode = eventItems[0]
+    if (firstNode instanceof HTMLElement && firstNode.children && events.indexOf(firstNode.children[0].className) >= 0) {
+      eventItems = firstNode.children
+    }
+
+    for (const eventItem of eventItems) {
       if (!(eventItem instanceof HTMLElement)) continue
       // eventItem should have only one className
       if (events.indexOf(eventItem.className) < 0) continue

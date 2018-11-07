@@ -1,71 +1,71 @@
-#dashboard .news > .commit_comment,
-#dashboard .news > .create,
-#dashboard .news > .follow,
-#dashboard .news > .fork,
-#dashboard .news > .git-branch,
-#dashboard .news > .gollum,
-#dashboard .news > .issues_closed,
-#dashboard .news > .issues_comment,
-#dashboard .news > .issues_labeled,
-#dashboard .news > .issues_opened,
-#dashboard .news > .issues_reopened,
-#dashboard .news > .public,
-#dashboard .news > .push,
-#dashboard .news > .release,
-#dashboard .news > .repo,
-#dashboard .news > .tag,
-#dashboard .news > .team_add,
-#dashboard .news > .member_add,
-#dashboard .news > .watch_started {
+#dashboard .news > div > .commit_comment,
+#dashboard .news > div > .create,
+#dashboard .news > div > .follow,
+#dashboard .news > div > .fork,
+#dashboard .news > div > .git-branch,
+#dashboard .news > div > .gollum,
+#dashboard .news > div > .issues_closed,
+#dashboard .news > div > .issues_comment,
+#dashboard .news > div > .issues_labeled,
+#dashboard .news > div > .issues_opened,
+#dashboard .news > div > .issues_reopened,
+#dashboard .news > div > .public,
+#dashboard .news > div > .push,
+#dashboard .news > div > .release,
+#dashboard .news > div > .repo,
+#dashboard .news > div > .tag,
+#dashboard .news > div > .team_add,
+#dashboard .news > div > .member_add,
+#dashboard .news > div > .watch_started {
   display: none;
 }
 
-#dashboard.show_starred_and_followed_by .news > .watch_started.by_internet,
-#dashboard.show_starred_and_followed_by .news > .follow.by_internet {
+#dashboard.show_starred_and_followed_by .news > div > .watch_started.by_internet,
+#dashboard.show_starred_and_followed_by .news > div > .follow.by_internet {
   display: block;
 }
 
-#dashboard.show_forked_by .news > .fork.by_internet {
+#dashboard.show_forked_by .news > div > .fork.by_internet {
   display: block;
 }
 
-#dashboard.show_stars_and_follows .news > .watch_started.by_followed_people,
-#dashboard.show_stars_and_follows .news > .follow.by_followed_people {
+#dashboard.show_stars_and_follows .news > div > .watch_started.by_followed_people,
+#dashboard.show_stars_and_follows .news > div > .follow.by_followed_people {
   display: block;
 }
 
-#dashboard.show_forks .news > .fork.by_followed_people {
+#dashboard.show_forks .news > div > .fork.by_followed_people {
   display: block;
 }
 
-#dashboard.show_open_source .news > .repo.by_followed_people,
-#dashboard.show_open_source .news > .create.by_followed_people,
-#dashboard.show_open_source .news > .public.by_followed_people {
+#dashboard.show_open_source .news > div > .repo.by_followed_people,
+#dashboard.show_open_source .news > div > .create.by_followed_people,
+#dashboard.show_open_source .news > div > .public.by_followed_people {
   display: block;
 }
 
-#dashboard.show_releases .news > .tag,
-#dashboard.show_releases .news > .release {
+#dashboard.show_releases .news > div > .tag,
+#dashboard.show_releases .news > div > .release {
   display: block;
 }
 
-#dashboard.show_code .news > .gollum,
-#dashboard.show_code .news > .git-branch,
-#dashboard.show_code .news > .push {
+#dashboard.show_code .news > div > .gollum,
+#dashboard.show_code .news > div > .git-branch,
+#dashboard.show_code .news > div > .push {
   display: block;
 }
 
-#dashboard.show_conversations .news > .issues_comment,
-#dashboard.show_conversations .news > .commit_comment,
-#dashboard.show_conversations .news > .issues_opened,
-#dashboard.show_conversations .news > .issues_labeled,
-#dashboard.show_conversations .news > .issues_closed,
-#dashboard.show_conversations .news > .issues_reopened {
+#dashboard.show_conversations .news > div > .issues_comment,
+#dashboard.show_conversations .news > div > .commit_comment,
+#dashboard.show_conversations .news > div > .issues_opened,
+#dashboard.show_conversations .news > div > .issues_labeled,
+#dashboard.show_conversations .news > div > .issues_closed,
+#dashboard.show_conversations .news > div > .issues_reopened {
   display: block;
 }
 
-#dashboard.show_administration .news > .team_add,
-#dashboard.show_administration .news > .member_add {
+#dashboard.show_administration .news > div > .team_add,
+#dashboard.show_administration .news > div > .member_add {
   display: block;
 }
 
