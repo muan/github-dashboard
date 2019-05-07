@@ -105,19 +105,13 @@ function init () {
   details.appendChild(summary)
   details.appendChild(container)
 
-  const newDashboard = document.querySelector('.page-responsive [data-src*="/dashboard/recent-activity"], .js-recent-activity-container')
-  const oldDashboard = document.querySelector('.news')
-  if (newDashboard) {
-    newDashboard.after(details)
-  } else if(oldDashboard) {
-    // org or user condition
-    summary.classList.remove('btn-sm')
-    details.classList.add(context === 'org' ? 'mt-3' : 'mt-5')
-
-    oldDashboard.prepend(details)
+  const positionMarker = document.querySelector('.js-all-activity-header')
+  if (positionMarker) {
+    positionMarker.before(details)
+    applyPreference()
+  } else {
+    console.log('Dashboard extension: position marker not found.')
   }
-
-  if (newDashboard || oldDashboard) applyPreference()
 }
 
 function rememberPreference () {
