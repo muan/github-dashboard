@@ -39,6 +39,8 @@ const events = [
   'team_add', 'member_add'
 ]
 
+const eventClasses = events.map(e => `.${e}`).join()
+
 let listOfFollowees
 
 init()
@@ -185,17 +187,8 @@ async function addMoreSpecificIdentifiers(list) {
   for (const record of list) {
     if (!record.target.classList.contains('news')) continue
 
-    let eventItems = record.addedNodes
-    // Markup change workaround for events wrapped in an empty div
-    const firstNode = eventItems[0]
-    if (firstNode instanceof HTMLElement && firstNode.children && events.indexOf(firstNode.children[0].className) >= 0) {
-      eventItems = firstNode.children
-    }
-
-    for (const eventItem of eventItems) {
+    for (const eventItem of record.target.querySelectorAll(eventClasses)) {
       if (!(eventItem instanceof HTMLElement)) continue
-      // eventItem should have only one className
-      if (events.indexOf(eventItem.className) < 0) continue
 
       // Check if any links are to one of the followed people
       const fromFollowedPeople = Array.from(eventItem.querySelectorAll('a')).some(function(maybeActor) {
