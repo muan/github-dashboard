@@ -1,6 +1,6 @@
 # Activity filter for GitHub
 
-A Chrome extension for filtering the activity feed on github.com dashboard. 
+A web extension for filtering the activity feed on github.com dashboard.
 
 The Safari version can be found at https://github.com/muan/github-dashboard.safariextension.
 
@@ -8,5 +8,5 @@ The Safari version can be found at https://github.com/muan/github-dashboard.safa
 
 ### Install
 
-- [Download from the chrome web store](https://chrome.google.com/webstore/detail/pcnaddhmngnnpookfhhamkelhhakimdg).
-- [Manually load the extension](https://github.com/muan/github-gmail#chrome).
+- [Download in Chrome Web Store](https://chrome.google.com/webstore/detail/pcnaddhmngnnpookfhhamkelhhakimdg).
+- [Download in Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/dashboard-filter-for-github/)
