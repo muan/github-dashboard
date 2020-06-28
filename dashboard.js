@@ -72,11 +72,11 @@ function updateClasses() {
 
 function init () {
   const details = document.createElement('details')
-  details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay')
+  details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay', 'mb-2')
   details.style.userSelect = 'none'
   const summary = document.createElement('summary')
   summary.classList.add('btn', 'btn-sm')
-  summary.innerText = 'Filter'
+  summary.textContent = 'Filter'
   const container = document.createElement('div')
   container.classList.add('dropdown-menu', 'dropdown-menu-se', 'f5')
   container.style.width = '260px'
