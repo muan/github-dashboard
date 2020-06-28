@@ -8,5 +8,5 @@ The Safari version can be found at https://github.com/muan/github-dashboard.safa
 
 ### Install
 
-- [Download in Chrome Web Store](https://chrome.google.com/webstore/detail/pcnaddhmngnnpookfhhamkelhhakimdg).
+- [Download in Chrome Web Store](https://chrome.google.com/webstore/detail/pcnaddhmngnnpookfhhamkelhhakimdg)
 - [Download in Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/dashboard-filter-for-github/)
