@@ -9,6 +9,7 @@
 #dashboard .news > div > .issues_labeled,
 #dashboard .news > div > .issues_opened,
 #dashboard .news > div > .issues_reopened,
+#dashboard .news > div > .issues_merged,
 #dashboard .news > div > .public,
 #dashboard .news > div > .push,
 #dashboard .news > div > .release,
@@ -51,6 +52,7 @@
 
 #dashboard.show_code .news > div > .gollum,
 #dashboard.show_code .news > div > .git-branch,
+#dashboard.show_code .news > div > .issues_merged,
 #dashboard.show_code .news > div > .push {
   display: block;
 }

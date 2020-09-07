@@ -24,7 +24,7 @@ const menuItems = {
 
 const events = [
   // Code
-  'git-branch', 'push', 'gollum',
+  'git-branch', 'push', 'gollum', 'issues_merged',
   // Releases
   'release', 'tag',
   // Conversations
