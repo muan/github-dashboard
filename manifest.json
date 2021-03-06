@@ -2,7 +2,7 @@
   "name": "Dashboard filter for GitHub",
   "short_name": "dashboard",
   "version": "0.3.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "This adds an activity filter menu to GitHub dashboard.",
   "homepage_url": "http://github.com/muan/dashboard",
   "permissions": [
