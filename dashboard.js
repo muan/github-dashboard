@@ -72,13 +72,13 @@ function updateClasses() {
 
 function init () {
   const details = document.createElement('details')
-  details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay', 'float-right', 'mb-n1')
+  details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay', 'mb-n1', 'mt-3')
   details.style.userSelect = 'none'
   const summary = document.createElement('summary')
   summary.classList.add('btn', 'btn-sm')
   summary.textContent = 'Filter'
   const container = document.createElement('div')
-  container.classList.add('dropdown-menu', 'dropdown-menu-sw', 'f5')
+  container.classList.add('dropdown-menu', 'dropdown-menu-se', 'f5')
   container.style.width = '260px'
 
   for (const key of menuItems[context]) {
@@ -107,9 +107,9 @@ function init () {
   details.appendChild(summary)
   details.appendChild(container)
 
-  const positionMarker = document.querySelector('.js-all-activity-header')
+  const positionMarker = document.querySelector('#dashboard')
   if (positionMarker) {
-    positionMarker.before(details)
+    positionMarker.prepend(details)
     applyPreference()
   } else {
     console.log('Dashboard extension: position marker not found.')
