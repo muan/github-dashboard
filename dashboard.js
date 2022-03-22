@@ -1,5 +1,5 @@
 // Could break if GitHub changes its markup
-const context = document.querySelector('#org_your_repos') ? 'org' : 'user'
+const context = document.querySelector('[data-ga-click*="context:organization"]') ? 'org' : 'user'
 const menuItems = {
   user: [
     'Watched repositories --',
@@ -72,10 +72,14 @@ function updateClasses() {
 
 function init () {
   const details = document.createElement('details')
-  details.classList.add('position-relative', 'js-dropdown-details', 'details-overlay', 'mb-n1', 'mt-3')
+  const classes = context === 'user'
+    ? ['position-relative', 'js-dropdown-details', 'details-overlay', 'float-left', 'mt-2', 'mr-3']
+    : ['position-relative', 'js-dropdown-details', 'details-overlay', 'mb-n1', 'mt-3', 'mb-2']
+  details.classList.add(...classes)
   details.style.userSelect = 'none'
   const summary = document.createElement('summary')
-  summary.classList.add('btn', 'btn-sm')
+  const btnClasses = context === 'user' ? ['btn'] : ['btn', 'btn-sm']
+  summary.classList.add(...btnClasses)
   summary.textContent = 'Filter'
   const container = document.createElement('div')
   container.classList.add('dropdown-menu', 'dropdown-menu-se', 'f5')
@@ -185,7 +189,7 @@ async function fetchFollowees() {
 async function addMoreSpecificIdentifiers(list) {
   const followees = await getFolloweeList()
   for (const record of list) {
-    if (!record.target.classList.contains('news')) continue
+    if (!record.target.classList.contains('news') && record.target.id !== 'panel-1') continue
 
     for (const eventItem of record.target.querySelectorAll(eventClasses)) {
       if (!(eventItem instanceof HTMLElement)) continue

@@ -1,73 +1,73 @@
-#dashboard .news > div > .commit_comment,
-#dashboard .news > div > .create,
-#dashboard .news > div > .follow,
-#dashboard .news > div > .fork,
-#dashboard .news > div > .git-branch,
-#dashboard .news > div > .gollum,
-#dashboard .news > div > .issues_closed,
-#dashboard .news > div > .issues_comment,
-#dashboard .news > div > .issues_labeled,
-#dashboard .news > div > .issues_opened,
-#dashboard .news > div > .issues_reopened,
-#dashboard .news > div > .issues_merged,
-#dashboard .news > div > .public,
-#dashboard .news > div > .push,
-#dashboard .news > div > .release,
-#dashboard .news > div > .repo,
-#dashboard .news > div > .tag,
-#dashboard .news > div > .team_add,
-#dashboard .news > div > .member_add,
-#dashboard .news > div > .watch_started {
+#dashboard .news div .commit_comment,
+#dashboard .news div .create,
+#dashboard .news div .follow,
+#dashboard .news div .fork,
+#dashboard .news div .git-branch,
+#dashboard .news div .gollum,
+#dashboard .news div .issues_closed,
+#dashboard .news div .issues_comment,
+#dashboard .news div .issues_labeled,
+#dashboard .news div .issues_opened,
+#dashboard .news div .issues_reopened,
+#dashboard .news div .issues_merged,
+#dashboard .news div .public,
+#dashboard .news div .push,
+#dashboard .news div .release,
+#dashboard .news div .repo,
+#dashboard .news div .tag,
+#dashboard .news div .team_add,
+#dashboard .news div .member_add,
+#dashboard .news div .watch_started {
   display: none;
 }
 
-#dashboard.show_starred_and_followed_by .news > div > .watch_started.by_internet,
-#dashboard.show_starred_and_followed_by .news > div > .follow.by_internet {
+#dashboard.show_starred_and_followed_by .news div .watch_started.by_internet,
+#dashboard.show_starred_and_followed_by .news div .follow.by_internet {
   display: block;
 }
 
-#dashboard.show_forked_by .news > div > .fork.by_internet {
+#dashboard.show_forked_by .news div .fork.by_internet {
   display: block;
 }
 
-#dashboard.show_stars_and_follows .news > div > .watch_started.by_followed_people,
-#dashboard.show_stars_and_follows .news > div > .follow.by_followed_people {
+#dashboard.show_stars_and_follows .news div .watch_started.by_followed_people,
+#dashboard.show_stars_and_follows .news div .follow.by_followed_people {
   display: block;
 }
 
-#dashboard.show_forks .news > div > .fork.by_followed_people {
+#dashboard.show_forks .news div .fork.by_followed_people {
   display: block;
 }
 
-#dashboard.show_open_source .news > div > .repo.by_followed_people,
-#dashboard.show_open_source .news > div > .create.by_followed_people,
-#dashboard.show_open_source .news > div > .public.by_followed_people {
+#dashboard.show_open_source .news div .repo.by_followed_people,
+#dashboard.show_open_source .news div .create.by_followed_people,
+#dashboard.show_open_source .news div .public.by_followed_people {
   display: block;
 }
 
-#dashboard.show_releases .news > div > .tag,
-#dashboard.show_releases .news > div > .release {
+#dashboard.show_releases .news div .tag,
+#dashboard.show_releases .news div .release {
   display: block;
 }
 
-#dashboard.show_code .news > div > .gollum,
-#dashboard.show_code .news > div > .git-branch,
-#dashboard.show_code .news > div > .issues_merged,
-#dashboard.show_code .news > div > .push {
+#dashboard.show_code .news div .gollum,
+#dashboard.show_code .news div .git-branch,
+#dashboard.show_code .news div .issues_merged,
+#dashboard.show_code .news div .push {
   display: block;
 }
 
-#dashboard.show_conversations .news > div > .issues_comment,
-#dashboard.show_conversations .news > div > .commit_comment,
-#dashboard.show_conversations .news > div > .issues_opened,
-#dashboard.show_conversations .news > div > .issues_labeled,
-#dashboard.show_conversations .news > div > .issues_closed,
-#dashboard.show_conversations .news > div > .issues_reopened {
+#dashboard.show_conversations .news div .issues_comment,
+#dashboard.show_conversations .news div .commit_comment,
+#dashboard.show_conversations .news div .issues_opened,
+#dashboard.show_conversations .news div .issues_labeled,
+#dashboard.show_conversations .news div .issues_closed,
+#dashboard.show_conversations .news div .issues_reopened {
   display: block;
 }
 
-#dashboard.show_administration .news > div > .team_add,
-#dashboard.show_administration .news > div > .member_add {
+#dashboard.show_administration .news div .team_add,
+#dashboard.show_administration .news div .member_add {
   display: block;
 }
 
