@@ -1,0 +1,19 @@
+{
+  "name": "Dashboard filter for GitHub",
+  "short_name": "dashboard",
+  "version": "0.8.3",
+  "manifest_version": 2,
+  "description": "This adds an activity filter menu to GitHub dashboard.",
+  "homepage_url": "http://github.com/muan/dashboard",
+  "permissions": [
+    "https://api.github.com/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/", "https://github.com/orgs/*/dashboard"],
+      "css": ["dashboard.css"],
+      "js": ["dashboard.js"]
+    }
+  ]
+}
