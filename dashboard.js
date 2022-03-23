@@ -194,6 +194,8 @@ async function addMoreSpecificIdentifiers(list) {
 
     for (const eventItem of record.target.querySelectorAll(eventClasses)) {
       if (!(eventItem instanceof HTMLElement)) continue
+      const parentEventItem = eventItem.parentElement.closest(eventClasses)
+      if (parentEventItem) continue
 
       // Check if any links are to one of the followed people
       const fromFollowedPeople = Array.from(eventItem.querySelectorAll('a')).some(function(maybeActor) {

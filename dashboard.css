@@ -77,3 +77,26 @@
   margin-right: 10px;
   margin-top: -3px;
 }
+
+.commit_comment .commit_comment,
+.create .create,
+.follow .follow,
+.fork .fork,
+.git-branch .git-branch,
+.gollum .gollum,
+.issues_closed .issues_closed,
+.issues_comment .issues_comment,
+.issues_labeled .issues_labeled,
+.issues_opened .issues_opened,
+.issues_reopened .issues_reopened,
+.issues_merged .issues_merged,
+.public .public,
+.push .push,
+.release .release,
+.repo .repo,
+.tag .tag,
+.team_add .team_add,
+.member_add .member_add,
+.watch_started .watch_started {
+  display: block !important;
+}
