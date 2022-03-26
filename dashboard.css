@@ -1,73 +1,93 @@
-#dashboard .news div .commit_comment,
-#dashboard .news div .create,
-#dashboard .news div .follow,
-#dashboard .news div .fork,
-#dashboard .news div .git-branch,
-#dashboard .news div .gollum,
-#dashboard .news div .issues_closed,
-#dashboard .news div .issues_comment,
-#dashboard .news div .issues_labeled,
-#dashboard .news div .issues_opened,
-#dashboard .news div .issues_reopened,
-#dashboard .news div .issues_merged,
-#dashboard .news div .public,
-#dashboard .news div .push,
-#dashboard .news div .release,
-#dashboard .news div .repo,
-#dashboard .news div .tag,
-#dashboard .news div .team_add,
-#dashboard .news div .member_add,
-#dashboard .news div .watch_started {
+.by_followed_people.commit_comment,
+.by_internet.commit_comment,
+.by_followed_people.create,
+.by_internet.create,
+.by_followed_people.follow,
+.by_internet.follow,
+.by_followed_people.fork,
+.by_internet.fork,
+.by_followed_people.git-branch,
+.by_internet.git-branch,
+.by_followed_people.gollum,
+.by_internet.gollum,
+.by_followed_people.issues_closed,
+.by_internet.issues_closed,
+.by_followed_people.issues_comment,
+.by_internet.issues_comment,
+.by_followed_people.issues_labeled,
+.by_internet.issues_labeled,
+.by_followed_people.issues_opened,
+.by_internet.issues_opened,
+.by_followed_people.issues_reopened,
+.by_internet.issues_reopened,
+.by_followed_people.issues_merged,
+.by_internet.issues_merged,
+.by_followed_people.public,
+.by_internet.public,
+.by_followed_people.push,
+.by_internet.push,
+.by_followed_people.release,
+.by_internet.release,
+.by_followed_people.repo,
+.by_internet.repo,
+.by_followed_people.tag,
+.by_internet.tag,
+.by_followed_people.team_add,
+.by_internet.team_add,
+.by_followed_people.member_add,
+.by_internet.member_add,
+.by_followed_people.watch_started,
+.by_internet.watch_started {
   display: none;
 }
 
-#dashboard.show_starred_and_followed_by .news div .watch_started.by_internet,
-#dashboard.show_starred_and_followed_by .news div .follow.by_internet {
+.show_starred_and_followed_by .watch_started.by_internet,
+.show_starred_and_followed_by .follow.by_internet {
   display: block;
 }
 
-#dashboard.show_forked_by .news div .fork.by_internet {
+.show_forked_by .fork.by_internet {
   display: block;
 }
 
-#dashboard.show_stars_and_follows .news div .watch_started.by_followed_people,
-#dashboard.show_stars_and_follows .news div .follow.by_followed_people {
+.show_stars_and_follows .watch_started.by_followed_people,
+.show_stars_and_follows .follow.by_followed_people {
   display: block;
 }
 
-#dashboard.show_forks .news div .fork.by_followed_people {
+.show_forks .fork.by_followed_people {
   display: block;
 }
 
-#dashboard.show_open_source .news div .repo.by_followed_people,
-#dashboard.show_open_source .news div .create.by_followed_people,
-#dashboard.show_open_source .news div .public.by_followed_people {
+.show_open_source .repo.by_followed_people,
+.show_open_source .create.by_followed_people,
+.show_open_source .public.by_followed_people {
   display: block;
 }
 
-#dashboard.show_releases .news div .tag,
-#dashboard.show_releases .news div .release {
+.show_releases .tag,
+.show_releases .release {
   display: block;
 }
 
-#dashboard.show_code .news div .gollum,
-#dashboard.show_code .news div .git-branch,
-#dashboard.show_code .news div .issues_merged,
-#dashboard.show_code .news div .push {
+.show_code .gollum,
+.show_code .git-branch,
+.show_code .issues_merged,
+.show_code .push {
   display: block;
 }
 
-#dashboard.show_conversations .news div .issues_comment,
-#dashboard.show_conversations .news div .commit_comment,
-#dashboard.show_conversations .news div .issues_opened,
-#dashboard.show_conversations .news div .issues_labeled,
-#dashboard.show_conversations .news div .issues_closed,
-#dashboard.show_conversations .news div .issues_reopened {
+.show_conversations .issues_comment,
+.show_conversations .commit_comment,
+.show_conversations .issues_opened,
+.show_conversations .issues_labeled,
+.show_conversations .issues_closed,
+.show_conversations .issues_reopened {
   display: block;
 }
 
-#dashboard.show_administration .news div .team_add,
-#dashboard.show_administration .news div .member_add {
+.show_administration .team_add,
+.show_administration .member_add {
   display: block;
 }
 
@@ -76,27 +96,4 @@
   margin-bottom: -6px;
   margin-right: 10px;
   margin-top: -3px;
-}
-
-.commit_comment .commit_comment,
-.create .create,
-.follow .follow,
-.fork .fork,
-.git-branch .git-branch,
-.gollum .gollum,
-.issues_closed .issues_closed,
-.issues_comment .issues_comment,
-.issues_labeled .issues_labeled,
-.issues_opened .issues_opened,
-.issues_reopened .issues_reopened,
-.issues_merged .issues_merged,
-.public .public,
-.push .push,
-.release .release,
-.repo .repo,
-.tag .tag,
-.team_add .team_add,
-.member_add .member_add,
-.watch_started .watch_started {
-  display: block !important;
 }
