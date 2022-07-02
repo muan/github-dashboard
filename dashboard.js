@@ -12,7 +12,8 @@ const menuItems = {
     'Forks',
     'You --',
     'Starred and followed by',
-    'Forked by'
+    'Forked by',
+    'Sponsored by'
   ],
   org: [
     'Code',
@@ -35,6 +36,8 @@ const events = [
   'watch_started', 'follow',
   // Forks / Forked by
   'fork',
+  // Sponsorship
+  'sponsor',
   // Administration
   'team_add', 'member_add'
 ]

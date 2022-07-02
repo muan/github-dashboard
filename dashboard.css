@@ -37,7 +37,9 @@
 .by_followed_people.member_add,
 .by_internet.member_add,
 .by_followed_people.watch_started,
-.by_internet.watch_started {
+.by_internet.watch_started,
+.by_followed_people.sponsor,
+.by_internet.sponsor {
   display: none;
 }
 
@@ -46,16 +48,18 @@
   display: block;
 }
 
-.show_forked_by .fork.by_internet {
+.show_sponsored_by .sponsor.by_followed_people,
+.show_sponsored_by .sponsor.by_internet {
+  display: block;
+}
+
+.show_forked_by .fork.by_internet,
+.show_forks .fork.by_followed_people {
   display: block;
 }
 
 .show_stars_and_follows .watch_started.by_followed_people,
 .show_stars_and_follows .follow.by_followed_people {
-  display: block;
-}
-
-.show_forks .fork.by_followed_people {
   display: block;
 }
 
