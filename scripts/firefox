@@ -1,0 +1,1 @@
+mkdir tmp && cp *.* tmp && cp firefox/manifest.json tmp/manifest.json && cd tmp && zip -r ../firefox.zip * && cd .. && rm -rf tmp
