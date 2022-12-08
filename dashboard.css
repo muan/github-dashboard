@@ -1,71 +1,127 @@
 .by_followed_people.commit_comment,
 .by_internet.commit_comment,
+.body.by_internet:has(.commit_comment),
 .by_followed_people.create,
+.body.by_followed_people:has(.create),
 .by_internet.create,
+.body.by_internet:has(.create),
 .by_followed_people.follow,
+.body.by_followed_people:has(.follow),
 .by_internet.follow,
+.body.by_internet:has(.follow),
 .by_followed_people.fork,
+.body.by_followed_people:has(.fork),
 .by_internet.fork,
+.body.by_internet:has(.fork),
 .by_followed_people.git-branch,
+.body.by_followed_people:has(.git-branch),
 .by_internet.git-branch,
+.body.by_internet:has(.git-branch),
 .by_followed_people.gollum,
+.body.by_followed_people:has(.gollum),
 .by_internet.gollum,
+.body.by_internet:has(.gollum),
 .by_followed_people.issues_closed,
+.body.by_followed_people:has(.issues_closed),
 .by_internet.issues_closed,
+.body.by_internet:has(.issues_closed),
 .by_followed_people.issues_comment,
+.body.by_followed_people:has(.issues_comment),
 .by_internet.issues_comment,
+.body.by_internet:has(.issues_comment),
 .by_followed_people.issues_labeled,
+.body.by_followed_people:has(.issues_labeled),
 .by_internet.issues_labeled,
+.body.by_internet:has(.issues_labeled),
 .by_followed_people.issues_opened,
+.body.by_followed_people:has(.issues_opened),
 .by_internet.issues_opened,
+.body.by_internet:has(.issues_opened),
 .by_followed_people.issues_reopened,
+.body.by_followed_people:has(.issues_reopened),
 .by_internet.issues_reopened,
+.body.by_internet:has(.issues_reopened),
 .by_followed_people.issues_merged,
+.body.by_followed_people:has(.issues_merged),
 .by_internet.issues_merged,
+.body.by_internet:has(.issues_merged),
 .by_followed_people.public,
+.body.by_followed_people:has(.public),
 .by_internet.public,
+.body.by_internet:has(.public),
 .by_followed_people.push,
+.body.by_followed_people:has(.push),
 .by_internet.push,
+.body.by_internet:has(.push),
+.by_followed_people[data-hydro-click*='PushEvent'],
+.body.by_followed_people:has([data-hydro-click*='PushEvent']),
+.by_internet[data-hydro-click*='PushEvent'],
+.body.by_internet:has([data-hydro-click*='PushEvent']),
 .by_followed_people.release,
+.body.by_followed_people:has(.release),
 .by_internet.release,
+.body.by_internet:has(.release),
 .by_followed_people.repo,
+.body.by_followed_people:has(.repo),
 .by_internet.repo,
+.body.by_internet:has(.repo),
 .by_followed_people.tag,
+.body.by_followed_people:has(.tag),
 .by_internet.tag,
+.body.by_internet:has(.tag),
 .by_followed_people.team_add,
+.body.by_followed_people:has(.team_add),
 .by_internet.team_add,
+.body.by_internet:has(.team_add),
 .by_followed_people.member_add,
+.body.by_followed_people:has(.member_add),
 .by_internet.member_add,
+.body.by_internet:has(.member_add),
 .by_followed_people.watch_started,
+.body.by_followed_people:has(.watch_started),
 .by_internet.watch_started,
+.body.by_internet:has(.watch_started),
 .by_followed_people.sponsor,
-.by_internet.sponsor {
+.body.by_followed_people:has(.sponsor),
+.by_internet.sponsor,
+.body.by_internet:has(.sponsor) {
   display: none;
 }
 
 .show_starred_and_followed_by .watch_started.by_internet,
-.show_starred_and_followed_by .follow.by_internet {
+.show_starred_and_followed_by .body.by_internet:has(.watch_started),
+.show_starred_and_followed_by .follow.by_internet,
+.show_starred_and_followed_by .body.by_internet:has(.follow) {
   display: block;
 }
 
 .show_sponsored_by .sponsor.by_followed_people,
-.show_sponsored_by .sponsor.by_internet {
+.show_sponsored_by .body.by_followed_people:has(.sponsor),
+.show_sponsored_by .sponsor.by_internet,
+.show_sponsored_by .body.by_internet:has(.sponsor) {
   display: block;
 }
 
 .show_forked_by .fork.by_internet,
-.show_forks .fork.by_followed_people {
+.show_forked_by .body.by_internet:has(.fork),
+.show_forks .fork.by_followed_people,
+.show_forks .body.by_followed_people:has(.fork) {
   display: block;
 }
 
 .show_stars_and_follows .watch_started.by_followed_people,
-.show_stars_and_follows .follow.by_followed_people {
+.show_stars_and_follows .body.by_followed_people:has(.watch_started),
+.show_stars_and_follows .follow.by_followed_people,
+.show_stars_and_follows .body.by_followed_people:has(.follow) {
   display: block;
 }
 
 .show_open_source .repo.by_followed_people,
+.show_open_source .body.by_followed_people:has(.repo),
 .show_open_source .create.by_followed_people,
-.show_open_source .public.by_followed_people {
+.show_open_source .body.by_followed_people:has(.create),
+.show_open_source .public.by_followed_people,
+.show_open_source .body.by_followed_people:has(.public) {
   display: block;
 }
 
@@ -77,7 +133,8 @@
 .show_code .gollum,
 .show_code .git-branch,
 .show_code .issues_merged,
-.show_code .push {
+.show_code .push,
+.show_code .Details [data-hydro-click*='PushEvent'] {
   display: block;
 }
 

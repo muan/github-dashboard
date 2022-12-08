@@ -23,26 +23,24 @@ const menuItems = {
   ]
 }
 
-const events = [
+const eventClasses = [
   // Code
-  'git-branch', 'push', 'gollum', 'issues_merged',
+  '.git-branch', '.push', '.gollum', '.issues_merged', '[data-hydro-click*=\'PushEvent\']',
   // Releases
-  'release', 'tag',
+  '.release', '.tag',
   // Conversations
-  'issues_closed', 'issues_labeled', 'issues_opened', 'issues_reopened', 'commit_comment', 'issues_comment',
+  '.issues_closed', '.issues_labeled', '.issues_opened', '.issues_reopened', '.commit_comment', '.issues_comment',
   // Open source
-  'create', 'public', 'repo',
+  '.create', '.public', '.repo',
   // Stars and follows / Starred and followed by
-  'watch_started', 'follow',
+  '.watch_started', '.follow',
   // Forks / Forked by
-  'fork',
+  '.fork',
   // Sponsorship
-  'sponsor',
+  '.sponsor',
   // Administration
-  'team_add', 'member_add'
-]
-
-const eventClasses = events.map(e => `.${e}`).join()
+  '.team_add', '.member_add'
+].join()
 
 let listOfFollowees
 
@@ -197,14 +195,18 @@ async function addMoreSpecificIdentifiers(list) {
 
     for (const eventItem of record.target.querySelectorAll(eventClasses)) {
       if (!(eventItem instanceof HTMLElement)) continue
-      const parentEventItem = eventItem.parentElement.closest(eventClasses)
+      let target = eventItem
+      const parentEventItem = target.parentElement.closest(eventClasses)
       if (parentEventItem) continue
+      
+      const expandable =  target.parentElement.closest('.body:has(.Details)')
+      if (expandable) target = expandable
 
       // Check if any links are to one of the followed people
-      const fromFollowedPeople = Array.from(eventItem.querySelectorAll('a')).some(function(maybeActor) {
+      const fromFollowedPeople = Array.from(target.querySelectorAll('a')).some(function(maybeActor) {
         return followees.indexOf(maybeActor.pathname.slice(1)) >= 0
       })
-      eventItem.classList.add(fromFollowedPeople ? 'by_followed_people' : 'by_internet')
+      target.classList.add(fromFollowedPeople ? 'by_followed_people' : 'by_internet')
     }
   }
 }
